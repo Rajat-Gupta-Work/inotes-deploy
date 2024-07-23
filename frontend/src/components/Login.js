@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/notes/userContext'; // Import UserContext
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -9,7 +10,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch(`https://mern-i-notes-f.vercel.app/api/auth/login`, {
+        const response = await fetch(`${apiUrl}/api/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
