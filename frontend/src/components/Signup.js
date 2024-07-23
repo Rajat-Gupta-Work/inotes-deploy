@@ -22,7 +22,7 @@ const Signup = (props) => {
         setError(null);
 
         try {
-            const response = await fetch(`${window.location.origin}/api/auth/createuser`, {
+            const response = await fetch(`https://mern-i-notes-f.vercel.app/api/auth/createuser`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
