@@ -4,6 +4,7 @@ const fetchuser = require("../middleware/fetchuser");
 const Notes = require("../models/Notes");
 const { body, validationResult } = require("express-validator");
 
+
 // Route to fetch all notes
 router.get("/fetchallnotes", fetchuser, async (req, res) => {
   try {

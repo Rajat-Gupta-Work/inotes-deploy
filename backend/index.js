@@ -1,12 +1,15 @@
 const connectToMongo = require('./db');
 const express = require('express');
 var cors = require('cors')
+require('dotenv').config();
 
 // Connect to MongoDB
 connectToMongo();
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors())
 
@@ -27,6 +30,6 @@ const notesRoutes = require('./routes/notes');
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', notesRoutes);
 
-app.listen(port, () => {
-    console.log(`iNotebook Backend listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`iNotebook Backend listening at : ${PORT}`);
 });

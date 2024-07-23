@@ -4,7 +4,7 @@ const mongoURI = "mongodb://rajatgupta030302:JUbQFc3tzGUYWixb@ac-sivsztw-shard-0
 
 async function connectToMongo() {
   await mongoose
-    .connect(mongoURI)
+    .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to Mongo Successfully"))
     .catch((err) => console.log(err));
 }
