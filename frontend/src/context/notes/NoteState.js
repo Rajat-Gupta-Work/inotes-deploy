@@ -1,16 +1,16 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 
 const NoteState = (props) => {
-  const host = `https://mern-i-notes-f.vercel.app`;
   const [notes, setNotes] = useState([]);
 
 
   // Get all notes
   const getNotes = async () => {
     try {
-      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+      const response = await fetch(`${apiUrl}/api/notes/fetchallnotes`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
   // Add a note
   const addNote = async (title, description, tag) => {
     try {
-      const response = await fetch(`${host}/api/notes/addnote`, {
+      const response = await fetch(`${apiUrl}/api/notes/addnote`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
   // Delete a note
   const deleteNote = async (id) => {
     try {
-      await fetch(`${host}/api/notes/deletenote/${id}`, {
+      await fetch(`${apiUrl}/api/notes/deletenote/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const NoteState = (props) => {
   // Edit a note
   const editNote = async (id, title, description, tag) => {
     try {
-      const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+      const response = await fetch(`${apiUrl}/api/notes/updatenote/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
