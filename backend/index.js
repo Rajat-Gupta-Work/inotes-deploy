@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://mern-i-notes-f.vercel.app/' // Replace with your frontend URL
+}));
 
 // Middleware
 app.use(express.json());
