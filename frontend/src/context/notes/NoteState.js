@@ -3,7 +3,7 @@ import NoteContext from "./noteContext";
 
 
 const NoteState = (props) => {
-  const host = `${window.location.origin}`;
+  const host = `https://mern-i-notes-f.vercel.app`;
   const [notes, setNotes] = useState([]);
 
 
