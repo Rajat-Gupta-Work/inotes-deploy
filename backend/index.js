@@ -1,19 +1,14 @@
 const connectToMongo = require('./db');
 const express = require('express');
 var cors = require('cors')
-require('dotenv').config();
 
 // Connect to MongoDB
 connectToMongo();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
+const PORT = 5000;
 
-app.use(cors({
-  origin: 'https://mern-i-notes-f.vercel.app/' // Replace with your frontend URL
-}));
+app.use(cors());
 
 // Middleware
 app.use(express.json());

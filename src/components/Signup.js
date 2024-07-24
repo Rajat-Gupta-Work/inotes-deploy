@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { useUser } from '../context/notes/userContext';
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "http://localhost:5000";
 // Import UserContext
 
 const Signup = (props) => {

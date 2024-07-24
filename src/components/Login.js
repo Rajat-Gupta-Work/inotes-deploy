@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../context/notes/userContext'; // Import UserContext
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "http://localhost:5000";
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });

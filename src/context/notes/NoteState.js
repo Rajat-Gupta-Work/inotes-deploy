@@ -1,6 +1,6 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "http://localhost:5000";
 
 
 const NoteState = (props) => {
