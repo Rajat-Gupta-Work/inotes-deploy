@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://localhost:27017/";
+const mongoURI = "mongodb+srv://rajat:rajat@cluster0.hqjhecx.mongodb.net/inotes";
 
-async function connectToMongo() {
-  await mongoose
-    .connect(mongoURI)
-    .then(() => console.log("Connected to Mongo Successfully"))
-    .catch((err) => console.log(err));
-}
+const connectToMongo = async () => {
+  try {
+    await mongoose.connect(mongoURI);
+    console.log("Connected to Mongo Successfully");
+  } catch (err) {
+    console.error("Failed to connect to Mongo", err);
+  }
+};
 
 module.exports = connectToMongo;
