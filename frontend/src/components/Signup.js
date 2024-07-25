@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { useUser } from '../context/notes/userContext';
-const apiUrl = "http://localhost:5000";
+const apiUrl = "https://inotes-deploy-backend.onrender.com";
 // Import UserContext
 
 const Signup = (props) => {
